@@ -13,7 +13,7 @@ export default function PageModal() {
 
   return (
     <div
-      className={`absolute top-0 right-0 z-10 h-full w-[90%] overflow-hidden text-white ${
+      className={`absolute top-0 right-0 z-10 h-full w-full overflow-hidden text-white lg:w-[90%] ${
         phase === "closed" ? "pointer-events-none" : "pointer-events-auto"
       }`}
     >
@@ -21,7 +21,7 @@ export default function PageModal() {
         <div
           className={`absolute inset-0 overflow-auto bg-[#121314] transition-transform duration-300 ease-in-out motion-reduce:transition-none ${translateClass}`}
         >
-          <div className="px-8 py-12 md:px-16">
+          <div className="px-8 pt-12 pb-20 md:px-16 lg:pb-12">
             <SectionOutlet path={visiblePath} />
           </div>
         </div>
