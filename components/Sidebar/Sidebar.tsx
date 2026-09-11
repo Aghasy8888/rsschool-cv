@@ -10,6 +10,7 @@ import {
   User,
   type LucideIcon,
 } from "lucide-react";
+import { HOME } from "@/constants";
 import { cv, navItems, type NavIcon } from "@/data";
 
 const icons: Record<NavIcon, LucideIcon> = {
@@ -21,8 +22,8 @@ const icons: Record<NavIcon, LucideIcon> = {
 };
 
 function isActive(pathname: string, href: string) {
-  if (href === "/") {
-    return pathname === "/";
+  if (href === HOME) {
+    return pathname === HOME;
   }
   return pathname === href || pathname.startsWith(`${href}/`);
 }
@@ -34,7 +35,7 @@ export default function Sidebar() {
     <aside className="fixed right-0 bottom-0 left-0 z-999 flex h-auto w-full flex-row bg-[rgba(14,15,16,0.85)] lg:inset-y-0 lg:left-0 lg:right-auto lg:h-full lg:w-[10%] lg:min-w-16 lg:flex-col lg:bg-[rgba(14,15,16,0.6)]">
       <div className="hidden items-center justify-center border-b border-white/10 px-2 py-6 lg:flex">
         <Link
-          href="/"
+          href={HOME}
           className="font-script text-2xl leading-none text-white md:text-3xl"
         >
           {cv.shortName}

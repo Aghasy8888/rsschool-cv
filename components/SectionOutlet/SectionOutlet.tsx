@@ -1,7 +1,13 @@
-import About from "../About/About";
-import Contact from "../Contact/Contact";
-import Projects from "../Projects/Projects";
-import Skills from "../Skills/Skills";
+import {
+  About,
+  Contact,
+  Education,
+  Languages,
+  Projects,
+  Services,
+  Skills,
+} from "@/components";
+import { ABOUT, CONTACT, PROJECTS, SKILLS } from "@/constants";
 
 type SectionOutletProps = {
   path: string;
@@ -9,13 +15,20 @@ type SectionOutletProps = {
 
 export default function SectionOutlet({ path }: SectionOutletProps) {
   switch (path) {
-    case "/about":
-      return <About />;
-    case "/skills":
+    case ABOUT:
+      return (
+        <div className="space-y-16">
+          <About />
+          <Services />
+          <Education />
+          <Languages />
+        </div>
+      );
+    case SKILLS:
       return <Skills />;
-    case "/projects":
+    case PROJECTS:
       return <Projects />;
-    case "/contact":
+    case CONTACT:
       return <Contact />;
     default:
       return null;

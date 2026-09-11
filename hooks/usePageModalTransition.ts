@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { HOME } from "@/constants";
 
 export const PAGE_MODAL_DURATION_MS = 300;
 
@@ -6,7 +7,7 @@ export type PageModalPhase = "closed" | "exiting" | "entering" | "open";
 export type PageModalOffset = "full" | "zero";
 
 function isHomePath(path: string) {
-  return path === "/";
+  return path === HOME;
 }
 
 export function usePageModalTransition(pathname: string) {
@@ -61,7 +62,7 @@ export function usePageModalTransition(pathname: string) {
       const next = pendingPathRef.current;
 
       if (isHomePath(next)) {
-        setVisiblePath("/");
+        setVisiblePath(HOME);
         setOffset("full");
         setPhase("closed");
         return;

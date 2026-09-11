@@ -1,9 +1,11 @@
+import { ABOUT, CONTACT, HOME, PROJECTS, SKILLS } from "@/constants";
+
 export const navItems = [
-  { href: "/", label: "Home", icon: "home" },
-  { href: "/about", label: "About", icon: "about" },
-  { href: "/skills", label: "Skills", icon: "skills" },
-  { href: "/projects", label: "Projects", icon: "projects" },
-  { href: "/contact", label: "Contact", icon: "contact" },
+  { href: HOME, label: "Home", icon: "home" },
+  { href: ABOUT, label: "About", icon: "about" },
+  { href: SKILLS, label: "Skills", icon: "skills" },
+  { href: PROJECTS, label: "Projects", icon: "projects" },
+  { href: CONTACT, label: "Contact", icon: "contact" },
 ] as const;
 
 export type NavItem = (typeof navItems)[number];
