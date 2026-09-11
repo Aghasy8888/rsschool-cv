@@ -1,1 +1,7 @@
 export { default as Hero } from "./Hero/Hero";
+export { default as Sidebar } from "./Sidebar/Sidebar";
+export { default as PageModal } from "./PageModal/PageModal";
+export { default as About } from "./About/About";
+export { default as Skills } from "./Skills/Skills";
+export { default as Projects } from "./Projects/Projects";
+export { default as Contact } from "./Contact/Contact";

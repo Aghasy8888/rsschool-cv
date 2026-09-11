@@ -1,5 +1,6 @@
 export const cv = {
   fullName: "Aghasy Ghazaryan",
+  shortName: "Aghasy",
   tagline: {
     prefix: "I am a ",
     highlight: "Developer",

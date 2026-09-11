@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Great_Vibes } from "next/font/google";
+import { Hero, PageModal, Sidebar } from "@/components";
 import { cv } from "@/data";
 import "./globals.css";
 
@@ -13,6 +14,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const greatVibes = Great_Vibes({
+  variable: "--font-great-vibes",
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: `${cv.fullName} | CV`,
   description: cv.description,
@@ -22,10 +29,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full overflow-hidden antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${greatVibes.variable} h-full overflow-hidden antialiased`}
     >
       <body className="flex h-full flex-col overflow-hidden font-sans">
-        {children}
+        <Sidebar />
+        <div className="relative h-full w-full">
+          <Hero />
+          <PageModal />
+          <div hidden>{children}</div>
+        </div>
       </body>
     </html>
   );
