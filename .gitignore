@@ -15,10 +15,16 @@
 
 # next.js
 /.next/
+
+# Static export — build locally, publish with `npx gh-pages -d out` (do not commit)
 /out/
 
 # production
 /build
+
+# gh-pages cache (if CACHE_DIR is customized outside node_modules)
+.cache
+/node_modules/.cache/gh-pages
 
 # misc
 .DS_Store
@@ -39,3 +45,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Cursor local rules (not committed)
+.cursor/
