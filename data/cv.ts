@@ -227,6 +227,43 @@ export const cv = {
       },
     ],
   },
+  socialLinks: [
+    {
+      id: "linkedin",
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/aghasy-ghazaryan-8bba8a244/",
+    },
+    {
+      id: "github",
+      label: "GitHub",
+      href: "https://github.com/Aghasy8888",
+    },
+  ],
+  codeExample: {
+    title: "Code Example",
+    language: "javascript",
+    description: "Valid Parentheses — check if brackets are correctly matched using a stack.",
+    code: `const isValid = function(s) {
+  const stack = [];
+  const bracketMap = {
+    ')': '(',
+    '}': '{',
+    ']': '[',
+  };
+
+  for (let char of s) {
+    if (bracketMap[char]) {
+      if (stack.pop() !== bracketMap[char]) {
+        return false;
+      }
+    } else {
+      stack.push(char);
+    }
+  }
+
+  return stack.length === 0;
+};`,
+  },
 } as const;
 
 export type Cv = typeof cv;

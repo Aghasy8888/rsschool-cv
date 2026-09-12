@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Great_Vibes } from "next/font/google";
-import { Hero, PageModal, Sidebar } from "@/components";
+import { Hero, PageModal, Sidebar, SocialLinks } from "@/components";
 import { cv } from "@/data";
 import "./globals.css";
 
@@ -33,6 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex h-full flex-col overflow-hidden font-sans">
         <Sidebar />
+        <SocialLinks />
         <div className="relative h-full w-full">
           <Hero />
           <PageModal />

@@ -1,5 +1,6 @@
 import {
   About,
+  CodeExample,
   Contact,
   Education,
   Languages,
@@ -30,6 +31,7 @@ export default function SectionOutlet({ path }: SectionOutletProps) {
         <div className="space-y-16">
           <Skills />
           <WorkingProcess />
+          <CodeExample />
         </div>
       );
     case PROJECTS:

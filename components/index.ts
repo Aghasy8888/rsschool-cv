@@ -7,5 +7,7 @@ export { default as Education } from "./Education/Education";
 export { default as Languages } from "./Languages/Languages";
 export { default as Skills } from "./Skills/Skills";
 export { default as WorkingProcess } from "./WorkingProcess/WorkingProcess";
+export { default as CodeExample } from "./CodeExample/CodeExample";
 export { default as Projects } from "./Projects/Projects";
 export { default as Contact } from "./Contact/Contact";
+export { default as SocialLinks } from "./SocialLinks/SocialLinks";
