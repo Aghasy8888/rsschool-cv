@@ -28,7 +28,7 @@ export default function SocialLinks() {
   return (
     <aside
       aria-label="Social profiles"
-      className="pointer-events-none fixed top-1/2 right-0 z-998 -translate-y-1/2 border-r-2 border-accent py-4 pr-3 pl-2"
+      className="pointer-events-none fixed top-24 right-0 z-998 -translate-y-1/2 border-r-2 border-accent py-4 pr-3 pl-2"
     >
       <ul className="pointer-events-auto flex flex-col gap-5">
         {cv.socialLinks.map((item) => {
