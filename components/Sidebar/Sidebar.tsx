@@ -32,7 +32,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed right-0 bottom-0 left-0 z-999 flex h-auto w-full flex-row bg-[rgba(14,15,16,0.85)] lg:inset-y-0 lg:left-0 lg:right-auto lg:h-full lg:w-[10%] lg:min-w-16 lg:flex-col lg:bg-[rgba(14,15,16,0.6)]">
+    <aside className="relative z-999 flex h-auto w-full shrink-0 flex-row bg-[rgba(14,15,16,0.85)] lg:fixed lg:inset-y-0 lg:left-0 lg:right-auto lg:h-full lg:w-[10%] lg:min-w-16 lg:flex-col lg:bg-[rgba(14,15,16,0.6)]">
       <div className="hidden items-center justify-center border-b border-white/10 px-2 py-6 lg:flex">
         <Link
           href={HOME}
@@ -56,7 +56,7 @@ export default function Sidebar() {
                   href={item.href}
                   aria-label={item.label}
                   aria-current={active ? "page" : undefined}
-                  className={`group relative flex items-center justify-center rounded-lg px-3 py-4 transition-colors lg:rounded-none lg:px-0 ${
+                  className={`group relative flex items-center justify-center rounded-t-lg px-3 py-4 transition-colors lg:rounded-none lg:px-0 ${
                     active
                       ? "bg-accent text-[#0e0f10] lg:bg-white/5 lg:text-accent"
                       : "text-white hover:bg-white/5 hover:text-accent"

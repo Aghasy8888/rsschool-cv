@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Great_Vibes } from "next/font/google";
-import { Hero, PageModal, Sidebar, SocialLinks } from "@/components";
+import { Footer, Hero, PageModal, Sidebar, SocialLinks } from "@/components";
 import { cv } from "@/data";
 import "./globals.css";
 
@@ -32,13 +32,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${greatVibes.variable} h-full overflow-hidden antialiased`}
     >
       <body className="flex h-full flex-col overflow-hidden font-sans">
-        <Sidebar />
         <SocialLinks />
-        <div className="relative h-full w-full">
+        <div className="relative flex min-h-0 w-full flex-1 flex-col">
           <Hero />
           <PageModal />
           <div hidden>{children}</div>
         </div>
+        <Sidebar />
+        <Footer />
       </body>
     </html>
   );

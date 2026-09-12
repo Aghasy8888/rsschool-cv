@@ -21,7 +21,7 @@ export default function PageModal() {
         <div
           className={`absolute inset-0 overflow-auto bg-[#121314] transition-transform duration-300 ease-in-out motion-reduce:transition-none ${translateClass}`}
         >
-          <div className="px-8 pt-12 pb-20 md:px-16 lg:pb-12">
+          <div className="px-8 pt-12 pb-8 md:px-16 lg:pb-12">
             <SectionOutlet path={visiblePath} />
           </div>
         </div>

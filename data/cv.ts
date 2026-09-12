@@ -239,6 +239,17 @@ export const cv = {
       href: "https://github.com/Aghasy8888",
     },
   ],
+  footer: {
+    year: 2026,
+    course: {
+      href: "https://rs.school/courses/short-track",
+      schoolLink: "https://rs.school/",
+      logo: {
+        src: "https://rs.school/_next/static/media/rss-logo.c19ce1b4.svg",
+        alt: "RS School Logo",
+      },
+    },
+  },
   codeExample: {
     title: "Code Example",
     language: "javascript",
