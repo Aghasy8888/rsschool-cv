@@ -6,6 +6,7 @@ import {
   Projects,
   Services,
   Skills,
+  WorkingProcess,
 } from "@/components";
 import { ABOUT, CONTACT, PROJECTS, SKILLS } from "@/constants";
 
@@ -25,7 +26,12 @@ export default function SectionOutlet({ path }: SectionOutletProps) {
         </div>
       );
     case SKILLS:
-      return <Skills />;
+      return (
+        <div className="space-y-16">
+          <Skills />
+          <WorkingProcess />
+        </div>
+      );
     case PROJECTS:
       return <Projects />;
     case CONTACT:

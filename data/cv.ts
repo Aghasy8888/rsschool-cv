@@ -82,6 +82,129 @@ export const cv = {
       { name: "Russian", level: "B2" },
     ],
   },
+  skills: {
+    title: "Skills",
+    bars: [
+      { name: "HTML / HTML5", level: 80 },
+      { name: "CSS / CSS3", level: 90 },
+      { name: "SASS / SCSS", level: 85 },
+      { name: "Tailwindcss", level: 90 },
+      { name: "Redux", level: 90 },
+    ],
+    circles: [
+      { name: "Javascript", level: 90 },
+      { name: "Typescript", level: 85 },
+      { name: "React", level: 90 },
+      { name: "Nextjs", level: 85 },
+    ],
+  },
+  workingProcess: {
+    title: "Working Process",
+    hubLabel: ["WORKING", "PROCESS"],
+    steps: [
+      {
+        number: "01",
+        title: "Planning",
+        description:
+          "I carefully map each stage of development so delivery stays clear, steady, and on track.",
+      },
+      {
+        number: "02",
+        title: "Design",
+        description:
+          "I focus on clean, approachable interfaces that look polished and stay easy to use.",
+      },
+      {
+        number: "03",
+        title: "Development",
+        description:
+          "I build with modern tools and solid practices so products stay reliable and ready to grow.",
+      },
+      {
+        number: "04",
+        title: "Testing",
+        description:
+          "I thoroughly check every detail to catch issues early and ship a polished, dependable result.",
+      },
+    ],
+  },
+  projects: {
+    title: "Projects",
+    featuredLabel: "Featured Project",
+    items: [
+      {
+        name: "Anuna",
+        href: "https://anuna.uk/en",
+        description:
+          "The ANUNA app aims to provide ultra-high-net-worth clients with a seamless platform for strategic investment management.",
+        stack: [
+          "HTML",
+          "Reactjs",
+          "Nextjs",
+          "TailwindCSS",
+          "Typescript",
+        ],
+        image: {
+          src: "/anuna-project.png",
+          alt: "Anuna project preview",
+        },
+      },
+      {
+        name: "Game",
+        href: "https://github.com/Aghasy8888/game",
+        description:
+          "This project is a game where players can strategically make attacks or offer protections to selected countries.",
+        stack: [
+          "HTML",
+          "SCSS",
+          "Material UI",
+          "Reactjs",
+          "Nextjs",
+          "Typescript",
+        ],
+        image: {
+          src: "game-project.png",
+          alt: "Game project preview",
+        },
+      },
+      {
+        name: "Yeram",
+        href: "https://github.com/Aghasy8888/yeram",
+        description:
+          "Yeram is a project I created from scratch, tailored for transport companies. It provides tools for analyzing passenger traffic, accessing vehicle-related data, and generating reports in various formats.",
+        stack: [
+          "HTML",
+          "SCSS",
+          "Reactjs",
+          "Nextjs",
+          "Typescript",
+          "Redux Toolkit",
+          "REST API"
+        ],
+        image: {
+          src: "/yeram-project.png",
+          alt: "Yeram project preview",
+        },
+      },
+      {
+        name: "Gardenia",
+        href: "https://retailer-gardenia.myshopify.com/",
+        description:
+          "A Shopify theme featuring an intelligent layout where every product has its own dedicated place.",
+        stack: [
+          "HTML",
+          "SCSS",
+          "Shopify",
+          "Javascript",
+          "Liquid",
+        ],
+        image: {
+          src: "/gardenia-project.png",
+          alt: "Gardenia project preview",
+        },
+      },
+    ],
+  },
 } as const;
 
 export type Cv = typeof cv;
