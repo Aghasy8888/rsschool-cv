@@ -205,6 +205,28 @@ export const cv = {
       },
     ],
   },
+  contact: {
+    title: "Contact",
+    items: [
+      {
+        icon: "email",
+        label: "Email",
+        value: "aghasghazaryan8888@gmail.com",
+        href: "mailto:aghasghazaryan8888@gmail.com",
+      },
+      {
+        icon: "discord",
+        label: "Discord",
+        value: "Aghasy Ghazaryan (Aghasy8888)",
+      },
+      {
+        icon: "phone",
+        label: "Phone",
+        value: "+37443672189",
+        href: "tel:+37443672189",
+      },
+    ],
+  },
 } as const;
 
 export type Cv = typeof cv;
