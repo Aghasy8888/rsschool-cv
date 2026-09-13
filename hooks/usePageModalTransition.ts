@@ -1,10 +1,19 @@
 import { useEffect, useRef, useState } from "react";
-import { HOME } from "@/constants";
+import {
+  HOME,
+  PAGE_MODAL_CLOSED,
+  PAGE_MODAL_ENTERING,
+  PAGE_MODAL_EXITING,
+  PAGE_MODAL_OFFSET_FULL,
+  PAGE_MODAL_OFFSET_ZERO,
+  PAGE_MODAL_OPEN,
+  type PageModalOffset,
+  type PageModalPhase,
+} from "@/constants";
 
 export const PAGE_MODAL_DURATION_MS = 300;
 
-export type PageModalPhase = "closed" | "exiting" | "entering" | "open";
-export type PageModalOffset = "full" | "zero";
+export type { PageModalOffset, PageModalPhase };
 
 function isHomePath(path: string) {
   return path === HOME;
@@ -13,10 +22,10 @@ function isHomePath(path: string) {
 export function usePageModalTransition(pathname: string) {
   const [visiblePath, setVisiblePath] = useState(pathname);
   const [phase, setPhase] = useState<PageModalPhase>(
-    isHomePath(pathname) ? "closed" : "open",
+    isHomePath(pathname) ? PAGE_MODAL_CLOSED : PAGE_MODAL_OPEN,
   );
   const [offset, setOffset] = useState<PageModalOffset>(
-    isHomePath(pathname) ? "full" : "zero",
+    isHomePath(pathname) ? PAGE_MODAL_OFFSET_FULL : PAGE_MODAL_OFFSET_ZERO,
   );
 
   const visiblePathRef = useRef(visiblePath);
@@ -48,7 +57,7 @@ export function usePageModalTransition(pathname: string) {
 
     pendingPathRef.current = pathname;
 
-    if (phaseRef.current === "exiting") {
+    if (phaseRef.current === PAGE_MODAL_EXITING) {
       return;
     }
 
@@ -63,20 +72,20 @@ export function usePageModalTransition(pathname: string) {
 
       if (isHomePath(next)) {
         setVisiblePath(HOME);
-        setOffset("full");
-        setPhase("closed");
+        setOffset(PAGE_MODAL_OFFSET_FULL);
+        setPhase(PAGE_MODAL_CLOSED);
         return;
       }
 
       setVisiblePath(next);
-      setPhase("entering");
-      setOffset("full");
+      setPhase(PAGE_MODAL_ENTERING);
+      setOffset(PAGE_MODAL_OFFSET_FULL);
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          setOffset("zero");
+          setOffset(PAGE_MODAL_OFFSET_ZERO);
           timerRef.current = setTimeout(() => {
-            setPhase("open");
+            setPhase(PAGE_MODAL_OPEN);
           }, PAGE_MODAL_DURATION_MS);
         });
       });
@@ -85,29 +94,30 @@ export function usePageModalTransition(pathname: string) {
     if (reducedMotionRef.current) {
       setVisiblePath(pathname);
       if (isHomePath(pathname)) {
-        setOffset("full");
-        setPhase("closed");
+        setOffset(PAGE_MODAL_OFFSET_FULL);
+        setPhase(PAGE_MODAL_CLOSED);
       } else {
-        setOffset("zero");
-        setPhase("open");
+        setOffset(PAGE_MODAL_OFFSET_ZERO);
+        setPhase(PAGE_MODAL_OPEN);
       }
       return;
     }
 
     const fromHome =
-      isHomePath(visiblePathRef.current) || phaseRef.current === "closed";
+      isHomePath(visiblePathRef.current) ||
+      phaseRef.current === PAGE_MODAL_CLOSED;
 
     if (fromHome) {
       applyPending();
       return;
     }
 
-    setPhase("exiting");
-    setOffset("zero");
+    setPhase(PAGE_MODAL_EXITING);
+    setOffset(PAGE_MODAL_OFFSET_ZERO);
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        setOffset("full");
+        setOffset(PAGE_MODAL_OFFSET_FULL);
       });
     });
 
